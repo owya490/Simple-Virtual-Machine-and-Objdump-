@@ -1,0 +1,38 @@
+milestoneCase5
+Test case for milestone test case 5, tests function calling and register arithmetic xd.
+
+sample_program
+Given sample program, tests mainly MOV
+
+test_jmp
+Tests for the jumping of the program counter through Register addition
+
+test_MOV
+Tests for MOV operand code, moving values to registers, Stack symbols and pointers
+
+test_CAL
+Tests for CAL operand code, calling to other functions to see if STACK symbols are still local
+
+test_REF
+Tests for REF operand code, and whether the address is correctly referenced and passed on
+
+test_ADD
+Tests for ADD operand code, testing if add registers correctly and if adding on program counter is correct
+
+test_NOT
+Tests for NOT operand code, seeing if the correct ouput was produced and printed out
+
+test_EQU
+Tests for EQU operand code, checking if it is equal to 0, assigning one, else zero
+
+BUFFEROVERFLOW
+Test if the program can correctly handle if the Stack buffer overflows
+
+test_recursion
+Tests if the program can handle recursion
+
+test deepCall
+See if the program can handle many functions calls linked together
+
+test_loop
+See if the program can handle a loop to countdown from 100
