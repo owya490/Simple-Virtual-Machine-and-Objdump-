@@ -2,7 +2,9 @@
 A Simple Virtual Machine and Objdump coded in C meant to emulate a CPU using register and a Stack Data Structure to perform operations.
 
 • RAM - Contains 28 addresses of 1 byte each
+
 • Register Bank - 8 registers of 1 byte each
+
 • Program Code - Memory required to store the program to be executed.
 
 **Arguments**
@@ -37,8 +39,11 @@ While the exact memory layout within the stack frame is open to interpretation, 
 reserved for special values.
 
   • 0x07 Stores the program counter.
+  
   • 0x06 Will not be referenced by the program; this register exists for your personal use.
+  
   • 0x05 Will not be referenced by the program; this register exists for your personal use.
+  
   • 0x04 Will not be referenced by the program; this register exists for your personal use.
   
 Registers in the range 0x00-0x03 are general purpose registers and may be explicitly referenced by a
@@ -91,17 +96,30 @@ number of instructions in the function. The function with the label 0 is the ent
 executed first.
 
 [Padding bits]
+
 [function label (3 bits)]
+ 
   [OPCODE]
+ 
   [OPCODE]
+ 
   ...
+ 
   [RET]
+ 
   [Number of instructions (5 bits)]
+
+
 [function label (3 bits)]
+  
   [OPCODE]
+  
   [OPCODE]
+  
   ...
+  
   [RET]
+  
   [Number of instructions (5 bits)]
  
  
