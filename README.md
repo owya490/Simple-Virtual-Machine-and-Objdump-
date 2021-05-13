@@ -16,8 +16,11 @@ The type is a two bit field and specifies the type of the preceding value.
 
   00 - value: 1 byte long. The value in the preceding 8 bits should be interpreted as a single byte
   value.
+  
   01 - register address: 3 bits long. This address refers to one of the eight fixed registers
+  
   10 - stack symbol: 5 bits long. This refers to a particular symbol within the current stack frame.
+  
   11 - pointer valued: 5 bits long. This treats the contents of the address referred to by a particular
   symbol within the current stack frame as a variable. Pointers may reference variables on
   different stack frames.
@@ -47,18 +50,25 @@ the op-codes and implement the operation on the memory specified.
 
   000 - [MOV A B] - Copies the value at some point B in memory to another point A in memory
   (register or stack). The destination may not be value typed.
+  
   001 - [CAL A] - Calls another function the first argument is a single byte (using the VALUE type)
   containing the label of the calling function.
+  
   010 - [RET] - Terminates the current function, this is guaranteed to always exist at the end of each
   function. There may be more than one RET in a function. If this function is the entry-point,
   then the program terminates.
+  
   011 - [REF A B] - Takes a stack symbol B and stores its corresponding stack address in A.
+  
   100 - [ADD A B] - Takes two register addresses and ADDs their values, storing the result in the first
   listed register.
+  
   101 - [PRINT A] - Takes any address type and prints the contents to a new line of standard output
   as an unsigned integer.
+  
   110 - [NOT A] - Takes a register address and performs a bitwise not operation on the value at that
   address. The result is stored in the same register
+  
   111 - [EQU A] - Takes a register address and tests if it equals zero. The value in the register will be
   set to 1 if it is 0, or 0 if it is not. The result is stored in the same register.
   
